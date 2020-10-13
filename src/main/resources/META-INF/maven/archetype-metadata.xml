@@ -1,0 +1,27 @@
+<archetype-descriptor
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd
+        http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+        xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        name="${artifactId}">
+
+
+    <fileSets>
+        <fileSet filtered="true" packaged="true">
+            <directory>src/main/scala</directory>
+        </fileSet>
+        <fileSet filtered="true" packaged="true">
+            <directory>src/test/scala</directory>
+        </fileSet>
+        <fileSet filtered="true" packaged="true">
+            <directory>src/main/resources</directory>
+        </fileSet>
+        <fileSet filtered="true" packaged="false">
+            <directory>src/assembly</directory>
+            <includes>
+                <include>bin.xml</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+
+</archetype-descriptor>
