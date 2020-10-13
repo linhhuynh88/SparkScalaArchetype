@@ -8,19 +8,32 @@
     <fileSets>
         <fileSet>
             <directory>${project.basedir}</directory>
-            <outputDirectory>bin</outputDirectory>
+            <outputDirectory></outputDirectory>
             <includes>
                 <include>README*</include>
                 <include>LICENSE*</include>
                 <include>NOTICE*</include>
+                <include>pom.xml</include>
             </includes>
         </fileSet>
         <fileSet>
             <directory>${project.build.directory}</directory>
             <outputDirectory>bin</outputDirectory>
             <includes>
-                <include>*.jar</include>
+                <include>${artifactId}-${version}.jar</include>
             </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}</directory>
+            <outputDirectory></outputDirectory>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <excludes>
+                <exclude>**/.idea/**</exclude>
+                <exclude>.gitignore</exclude>
+                <exclude>dependency-reduced-pom.xml</exclude>
+                <exclude>**/*.log</exclude>
+                <exclude>**/${project.build.directory}/**</exclude>
+            </excludes>
         </fileSet>
     </fileSets>
 </assembly>
